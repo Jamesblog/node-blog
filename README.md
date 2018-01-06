@@ -16,3 +16,8 @@
 5.评论功能
 
 ```
+
+## 涉及技术
+mongodb
+swig模版
+express
