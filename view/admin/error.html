@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/admin">后台管理</a></li>
+    <li class="active">错误页面</li>
+</ol>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">错误提示</h3>
+    </div>
+    <div class="panel-body">
+        {{msg}}
+    </div>
+</div>
+{% if url %}
+<a href="{{url}}">点击这里跳转</a>
+{% else %}
+<a href="javascript:window.history.go(-1);">返回上一页</a>
+{% endif %}
+
+{% endblock %}
+
+

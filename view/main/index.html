@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/public/css/util.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    <title>博客首页</title>
+</head>
+<body>
+<header>
+    <div class="center">
+        <a class="head_logo" href="/">
+            <img src="/public/image/logo.png" alt="" />
+        </a>
+        <nav class="head_nav">
+            {% if categoryType == '' %}
+            <a class="head_navCur" href="/">首页</a>
+            {% else %}
+            <a href="/">首页</a>
+            {% endif %}
+
+            {% for category in categories %}
+                {% if categoryType==category.id %}
+                <a class="head_navCur" href="/?type={{category.id}}">{{category.name}}</a>
+                {% else %}
+                <a href="/?type={{category.id}}">{{category.name}}</a>
+                {% endif %}
+            {% endfor %}
+        </nav>
+    </div>
+</header>
+<div class="center banner">
+    <img src="/public/image/banner.jpg" alt="">
+    <h2></h2>
+</div>
+<div class="center">
+    <div class="article_list">
+        {% for content in contents %}
+        <a class="article_item" href="/views?page={{content.id}}">
+            <h3>{{content.title}}</h3>
+            <div class="article_main">
+                <p class="article_content ellipsis_4">{{content.description}}</p>
+            </div>
+            <div class="article_tag">
+                <span>{{content.category.name}}</span>
+                <i>{{content.addTime | date('Y-m-d', -8*60)}}</i>
+            </div>
+        </a>
+        {% endfor %}
+
+        {% if pages>1 %}
+        <div class="pagination">
+            {% if page<=1 %}
+            <span class="pagination_left">没有了</span>
+            {% else %}
+            <a class="pagination_left" href="/?type={{categoryType}}&page={{page-1}}">上一页</a>
+            {% endif %}
+            <span>共 <i>{{pages}}</i> 页，当前是第 <i>{{page}}</i> 页</span>
+            {% if page>=pages %}
+            <span class="pagination_right">没有了</span>
+            {% else %}
+            <a class="pagination_right" href="/?type={{categoryType}}&page={{page+1}}">下一页</a>
+            {% endif %}
+        </div>
+        {% elseif count==0 %}
+        <p class="noPageList">没有相关内容</p>
+        {% endif %}
+    </div>
+    <aside class="user_list">
+        {% if userInfo._id %}
+        <div class="user_logined">
+            {% if userInfo.isAdmin %}
+            <p class="user_welcome">欢迎，<i>{{userInfo.username}}</i><a href="/admin">进入后台</a></p>
+            {% else %}
+            <p class="user_welcome">欢迎，<i>{{userInfo.username}}</i></p>
+            {% endif %}
+            <span id="loginOut" class="user_loginOut">退出</span>
+        </div>
+        {% else %}
+        <div class="user_form">
+            <div class="user_tab j_userTab">
+                <span class="user_cur">登录</span>
+                <span>注册</span>
+            </div>
+            <div id="login" class="user_login">
+                <div class="user_input">
+                    <i class="iconfont">&#xe60d;</i>
+                    <input type="text" placeholder="请输入用户名">
+                </div>
+                <div class="user_input margin_bottom0">
+                    <i class="iconfont">&#xe6c6;</i>
+                    <input type="password" placeholder="请输入密码">
+                </div>
+                <p class="user_err"><span>用户名不能为空</span></p>
+                <p class="user_login_btn">登 录</p>
+            </div>
+            <div id="register" class="user_register">
+                <div class="user_input">
+                    <i class="iconfont">&#xe60d;</i>
+                    <input type="text" placeholder="请输入用户名">
+                </div>
+                <div class="user_input">
+                    <i class="iconfont">&#xe6c6;</i>
+                    <input type="password" placeholder="请输入密码">
+                </div>
+                <div class="user_input margin_bottom0">
+                    <i class="iconfont">&#xe6c6;</i>
+                    <input type="password" placeholder="请再次输入密码">
+                </div>
+                <p class="user_err"><span>用户名不能为空</span></p>
+                <p class="user_register_btn">注 册</p>
+            </div>
+        </div>
+        {% endif %}
+        <div class="friendly_link">
+            <div class="user_tab">
+                <span class="discuss_title">友情链接</span>
+            </div>
+            <div class="link_item">
+                <a href="http:www.zhihu.com">知乎</a>
+            </div>
+        </div>
+        <p class="user_no">您是本网站的第<i>12</i>位访客祝您生活工作愉快</p>
+        <p class="copy_right">京ICP备17059284号-1</p>
+    </aside>
+</div>
+<script src="/public/js/jquery-1.8.3.min.js"></script>
+<script src="/public/js/main.js"></script>
+</body>
+</html>

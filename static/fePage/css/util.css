@@ -1,0 +1,104 @@
+/* 全局样式表 */
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #8590a6; opacity:1; 
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #8590a6;opacity:1;
+}
+input:-ms-input-placeholder{
+    color: #8590a6;opacity:1;
+}
+input::-webkit-input-placeholder{
+    color: #8590a6;opacity:1;
+}
+input,button,select,textarea{ outline:none;}
+textarea{resize:none;}
+html {
+    background-color:#fff;
+    color: #313131;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+body {
+    font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,figure,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+    list-style: none;
+    -webkit-tap-highlight-color:transparent
+}
+h1,h2,h3,h4,h5,h6{
+    font-size:100%;
+    font-weight:normal;
+}
+input,textarea,select,code,kbd,pre,samp {
+    font-size:100%;
+}
+input,button,select{border:none;outline: none;}/*去除iphone默认input样式*/
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button { }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+em, i {
+    font-style: normal;
+}
+html,body,button,input,select,textarea {
+    font-size:14px/1.5;
+    color:#313131;
+}
+img{
+    border: none;
+}
+a{
+    text-decoration:none !important;
+    -webkit-tap-highlight-color:rgb(0,0,0,0);outline:none;
+    color: #313131;
+    cursor: pointer;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+.fl{float: left;}
+.fr{float: right;}
+.clearfix:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0;
+}
+.ellipsis_1{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;  word-wrap: break-word;}
+.ellipsis_2{overflow : hidden;text-overflow: ellipsis;  word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.ellipsis_3{overflow : hidden;text-overflow: ellipsis;  word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;}
+.ellipsis_4{overflow : hidden;text-overflow: ellipsis;  word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 4;-webkit-box-orient: vertical;}
+.ellipsis_6{overflow : hidden;text-overflow: ellipsis;  word-wrap: break-word;display: -webkit-box;-webkit-line-clamp: 6;-webkit-box-orient: vertical;}  
+
+
+
+
