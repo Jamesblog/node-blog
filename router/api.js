@@ -67,7 +67,7 @@ router.post('/user/register',(req,res,next)=>{
             res.json(reponseData);
         }
         console.log( '=====用户注册保存成功===='+saveUserInfo+'=========' );
-    })
+    }).catch(()=>{});  
 });
 
 router.post('/user/login',(req,res)=>{
@@ -137,7 +137,7 @@ router.post('/comment',(req, res, next)=>{
             reponseData,
             commentList: newContent.comment
         });
-    })
+    }).catch(()=>{});  
 });
 
 router.get('/comment',(req, res, next)=>{

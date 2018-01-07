@@ -124,7 +124,7 @@ router.post('/category/add',(req,res,next)=>{
                 url: '/admin/category'
             })
         }
-    })  
+    }).catch(()=>{});  
 });
 
 router.get('/category/edit',(req, res, next)=>{
@@ -287,7 +287,7 @@ router.get('/content/edit',(req, res, next)=>{
                 categoryList
             })
         }
-    });
+    }).catch(()=>{});  ;
 });
 
 router.post('/content/edit',(req, res, next)=>{

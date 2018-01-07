@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Category = require('../models/Category');
 const Content = require('../models/Content');
+const markDown = require('markdown').markdown;
 
 router.get('/',(req,res,next)=>{
 
@@ -31,7 +32,7 @@ router.get('/',(req,res,next)=>{
     }).then((contents)=>{
         data.contents = contents
         res.render('main/index',data);
-    });  
+    }).catch(()=>{});  
 });
 
 router.get('/views',(req, res, next)=>{

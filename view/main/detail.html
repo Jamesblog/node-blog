@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/public/css/util.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="/public/css/main.css">
     <title>博客详情页</title>
 </head>
@@ -20,9 +21,8 @@
     <div class="detail_main">
         <h2 class="detail_title">{{content.title}}</h2>
         <p class="detail_tag">日期：{{content.addTime | date('Y-m-d', -8*60)}} -阅读量：{{content.view}}</p>
-        <div class="detail_content">
-            {{content.content}}
-        </div>
+        <input type="hidden" id="text-input" value="{{content.content}}">
+        <div class="detail_content" id="preview"></div>
     </div>
 </div>
 <div class="detail_discuss">
@@ -106,6 +106,19 @@
     </div>
 </div>
 <script src="/public/js/jquery-1.8.3.min.js"></script>
+<script src="/public/js/markdown.js"></script>
 <script src="/public/js/main.js"></script>
+<script>
+    // 文章显示
+    function Editor(input, preview) {
+    this.update = function () {
+        preview.innerHTML = markdown.toHTML(input.value);
+    };
+    input.editor = this;
+    this.update();
+    }
+    var $$ = function (id) { return document.getElementById(id); };
+    new Editor($$("text-input"), $$("preview"));
+</script>
 </body>
 </html>
