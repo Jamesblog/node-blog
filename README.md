@@ -1,5 +1,17 @@
-# node-blog
-这是一个基于node的博客，拥有博客基本的前后台功能
+项目描述
+===========================
+这是一个基于node的博客，拥有博客基本的前后台功能，在static下有静态模版文件
+
+****
+## 启动方式
+下载到本地后，cd到当前目录，然后启动入口文件
+```javascript
+node app.js
+```
+
+## 项目使用条件
+- [x] nodejs环境
+- [x] mongodb
 
 ## 页面所拥有功能如下
 ```
@@ -21,3 +33,7 @@
 mongodb
 swig模版
 express
+
+## License
+[MIT](/LICENSE)
+
