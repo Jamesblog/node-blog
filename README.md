@@ -4,7 +4,7 @@
 
 ****
 ## 启动方式
-下载到本地后，cd到当前目录，然后启动入口文件
+下载到本地后，cd到当前目录，安装package.json所需依赖包，然后启动入口文件
 ```javascript
 node app.js
 ```
@@ -30,9 +30,26 @@ node app.js
 ```
 
 ## 涉及技术
+```
 mongodb
 swig模版
 express
+```
+
+## 页面效果
+
+* 首页
+![首页](./static/README_img/WechatIMG5212.jpeg)
+
+* 文章页
+![文章页](./static/README_img/WechatIMG5213.jpeg)
+
+* 文章页评论
+![文章页评论](./static/README_img/WechatIMG5214.jpeg)
+
+* 后台界面
+![后台界面](./static/README_img/WechatIMG5215.jpeg)
+
 
 ## License
 [MIT](/LICENSE)
